@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard - Advanced API Integration</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+
+        <p>Welcome, <strong>
+                <%= user.username %>
+            </strong>!</p>
+
+        <h2>Your Repositories:</h2>
+        <ul>
+            <% repos.forEach(repo=> { %>
+                <li><a href="<%= repo.html_url %>" target="_blank">
+                        <%= repo.name %>
+                    </a></li>
+            <% }) %>
+        </ul>
+
+        <div class="center">
+            <a href="/logout" class="btn">Logout</a>
+        </div>
+    </div>
+</body>
+
+</html>

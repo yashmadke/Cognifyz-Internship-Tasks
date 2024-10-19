@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 8 - Advanced Server-Side App</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Advanced Server-Side App</h1>
+
+        <% if (user) { %>
+            <p>Hello, <%= user.username %>!</p>
+
+            <form action="/send-email" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Send Email</button>
+            </form>
+        <% } else { %>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <button type="submit">Login</button>
+            </form>
+        <% } %>
+
+        <h2>Data from API</h2>
+        <a href="/data" class="btn">Fetch Data</a>
+    </div>
+</body>
+
+</html>
